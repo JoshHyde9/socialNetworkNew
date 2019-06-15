@@ -5,6 +5,12 @@ body {
   font-family: "Open Sans";
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  background-color: #eee;
+}
+
+h1 {
+  font-size: 2rem;
+  font-family: "Caveat";
 }
 
 a {
@@ -26,6 +32,7 @@ a {
   margin-left: auto;
   margin-right: auto;
   width: 50%;
+  cursor: pointer;
 }
 
 .btn:hover, .btn-light:hover {
@@ -64,4 +71,29 @@ a {
   width: 80%;
   -webkit-box-shadow: #000 -2px 2px 2px;
           box-shadow: #000 -2px 2px 2px;
+}
+
+form {
+  width: 300px;
+  padding: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+form label {
+  font-weight: bold;
+}
+
+form input {
+  display: block;
+  font-size: 1em;
+  width: 100%;
+  padding: 0 16px;
+  height: 44px;
+  outline: none;
+  border: none;
+  margin-bottom: 10px;
 }

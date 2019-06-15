@@ -4,6 +4,12 @@ body {
   text-align: center;
   font-family: "Open Sans";
   box-sizing: border-box;
+  background-color: #eee;
+}
+
+h1 {
+  font-size: 2rem;
+  font-family: "Caveat";
 }
 
 a {
@@ -27,6 +33,7 @@ a {
   margin-left: auto;
   margin-right: auto;
   width: 50%;
+  cursor: pointer;
 
   &:hover {
     transition: all ease-in-out 100ms;
@@ -64,5 +71,30 @@ a {
     display: block;
     width: 80%;
     box-shadow: #000 -2px 2px 2px;
+  }
+}
+
+// Form
+form {
+  width: 300px;
+  padding: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  label {
+    font-weight: bold;
+  }
+
+  input {
+    display: block;
+    font-size: 1em;
+    width: 100%;
+    padding: 0 16px;
+    height: 44px;
+    outline: none;
+    border: none;
+    margin-bottom: 10px;
   }
 }
