@@ -1,0 +1,68 @@
+body {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  font-family: "Open Sans";
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+// Utility classes
+.container {
+  margin: auto;
+  max-width: 1000px;
+}
+
+// Buttons
+.btn {
+  display: block;
+  position: relative;
+  padding: 0.5rem 1rem;
+  border: 0;
+  margin-bottom: 0.3rem;
+  border-radius: 4px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+
+  &:hover {
+    transition: all ease-in-out 100ms;
+  }
+}
+
+.btn-light {
+  @extend .btn;
+
+  background: #33a2ff;
+  color: #fff;
+
+  &:hover {
+    background: #56b2ff;
+  }
+}
+
+// Grids
+.grid {
+  display: grid;
+}
+
+.grid-showcase {
+  @extend .grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 0.7rem;
+
+  div:nth-child(2) {
+    border: 1px solid #dedede;
+    background-color: #fff;
+  }
+
+  img {
+    float: right;
+    display: block;
+    width: 80%;
+    box-shadow: #000 -2px 2px 2px;
+  }
+}
