@@ -33,14 +33,14 @@ app.use(express.urlencoded({ extended: false }));
 app.use("/", require("./routes/showcase"));
 app.use("/users", require("./routes/users"));
 
-// // Page error handling
-// app.use((req, res) => {
-//   res.status(404);
+// Page error handling
+app.use((req, res) => {
+  res.status(404);
 
-//   if (req.accepts("html")) {
-//     return res.render("error", { title: "Page Not Found" });
-//   }
-// });
+  if (req.accepts("html")) {
+    return res.render("error", { title: "Page Not Found" });
+  }
+});
 
 app.listen(port, () => {
   console.log(`Server started at http://localhost:${port}`);
