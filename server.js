@@ -1,9 +1,18 @@
 const express = require("express");
 const hbs = require("express-handlebars");
 const path = require("path");
+const mongoose = require("mongoose");
 
 const app = express();
 const port = 3000;
+
+const db = require("./config/keys").MongoURI;
+mongoose
+  .connect(db, { useNewUrlParser: true })
+  .then(() => {
+    console.log("Connected to Mongoose DB");
+  })
+  .catch(err => console.log(err));
 
 app.use(express.static("public"));
 
