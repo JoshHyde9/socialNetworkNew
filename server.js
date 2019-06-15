@@ -1,5 +1,7 @@
 const express = require("express");
 const hbs = require("express-handlebars");
+const session = require("express-session");
+const flash = require("connect-flash");
 const path = require("path");
 const mongoose = require("mongoose");
 
@@ -27,7 +29,19 @@ app.engine(
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "hbs");
 
+// Body parser
 app.use(express.urlencoded({ extended: false }));
+
+// Session
+app.use(
+  session({
+    secret: "yanan",
+    resave: true,
+    saveUninitialized: true
+  })
+);
+
+app.use(flash());
 
 // Routes
 app.use("/", require("./routes/showcase"));
