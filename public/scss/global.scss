@@ -23,6 +23,27 @@ a {
   max-width: 1000px;
 }
 
+// Nav Menu
+.nav-menu {
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #33a2ff;
+  }
+  li {
+    float: left;
+    a {
+      display: block;
+      color: #fff;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+    }
+  }
+}
+
 // Buttons
 .btn {
   display: block;
