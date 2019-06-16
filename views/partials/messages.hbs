@@ -1,7 +1,17 @@
-{{!-- {{ if(success_msg != ''){ }}
-{{ success_msg }}
-{{ } }}
+{{!-- {{#unless success_msg = ''}}
+<div>
+    {{ success_msg }}
+</div>
+{{/unless}}
 
-{{ if(error_msg != ''){ }}
-{{ error_msg }}
-{{ } }} --}}
+{{#unless error_msg = ''}}
+<div>
+    {{ error_msg }}
+</div>
+{{/unless}}
+
+{{#unless error = ''}}
+<div>
+    {{ error }}
+</div>
+{{/unless}} --}}
