@@ -4,6 +4,9 @@ const session = require("express-session");
 const flash = require("connect-flash");
 const path = require("path");
 const mongoose = require("mongoose");
+const passport = require("passport");
+
+require("./config/passport")(passport);
 
 const app = express();
 const port = 3000;
@@ -41,6 +44,9 @@ app.use(
     saveUninitialized: true
   })
 );
+
+app.use(passport.initialize());
+app.use(passport.session());
 
 app.use(flash());
 app.use((req, res, next) => {
