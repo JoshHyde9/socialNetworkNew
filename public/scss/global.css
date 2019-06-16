@@ -43,6 +43,10 @@ a {
   text-decoration: none;
 }
 
+.nav-menu li a:hover {
+  background-color: #56b2ff;
+}
+
 .btn, .btn-light {
   display: block;
   position: relative;

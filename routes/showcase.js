@@ -1,5 +1,6 @@
 const express = require("express");
 const router = express.Router();
+const { ensureAuthenticated } = require("../config/auth");
 
 router.get("/", (req, res) => {
   res.render("showcase", {
@@ -8,8 +9,8 @@ router.get("/", (req, res) => {
   });
 });
 
-router.get("/feed", (req, res) => {
-  res.render("feed", { title: "Feed" });
+router.get("/feed", ensureAuthenticated, (req, res) => {
+  res.render("feed", { title: "Feed", name: req.user.name });
 });
 
 module.exports = router;
