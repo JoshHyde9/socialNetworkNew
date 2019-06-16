@@ -13,4 +13,8 @@ router.get("/feed", ensureAuthenticated, (req, res) => {
   res.render("feed", { title: "Feed", name: req.user.name });
 });
 
+router.get("/profile", ensureAuthenticated, (req, res) => {
+  res.render("profile", { title: `${req.user.name}'s profile` });
+});
+
 module.exports = router;

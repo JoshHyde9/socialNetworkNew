@@ -23,6 +23,11 @@ a {
   max-width: 1000px;
 }
 
+.feed-container {
+  margin: auto;
+  max-width: 1300px;
+}
+
 .nav-menu ul {
   list-style-type: none;
   margin: 0;
@@ -32,11 +37,11 @@ a {
 }
 
 .nav-menu li {
-  float: left;
+  display: inline;
 }
 
 .nav-menu li a {
-  display: block;
+  display: inline-block;
   color: #fff;
   text-align: center;
   padding: 14px 16px;
@@ -74,7 +79,7 @@ a {
   background: #56b2ff;
 }
 
-.grid, .grid-showcase {
+.grid, .grid-showcase, .grid-3 {
   display: -ms-grid;
   display: grid;
 }
@@ -96,6 +101,21 @@ a {
   width: 80%;
   -webkit-box-shadow: #000 -2px 2px 2px;
           box-shadow: #000 -2px 2px 2px;
+}
+
+.grid-3 {
+  padding-top: 1rem;
+  -ms-grid-columns: 200px auto 200px;
+      grid-template-columns: 200px auto 200px;
+  grid-gap: 3rem;
+}
+
+.grid-3 div:nth-child(2) {
+  background-color: #fff;
+}
+
+.grid-3 i {
+  padding: 0.9rem;
 }
 
 form {

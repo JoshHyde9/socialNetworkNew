@@ -23,6 +23,11 @@ a {
   max-width: 1000px;
 }
 
+.feed-container {
+  margin: auto;
+  max-width: 1300px;
+}
+
 // Nav Menu
 .nav-menu {
   ul {
@@ -33,9 +38,9 @@ a {
     background-color: #33a2ff;
   }
   li {
-    float: left;
+    display: inline;
     a {
-      display: block;
+      display: inline-block;
       color: #fff;
       text-align: center;
       padding: 14px 16px;
@@ -97,6 +102,20 @@ a {
     display: block;
     width: 80%;
     box-shadow: #000 -2px 2px 2px;
+  }
+}
+
+.grid-3 {
+  @extend .grid;
+  padding-top: 1rem;
+  grid-template-columns: 200px auto 200px;
+  grid-gap: 3rem;
+  div:nth-child(2) {
+    background-color: #fff;
+  }
+
+  i {
+    padding: 0.9rem;
   }
 }
 
