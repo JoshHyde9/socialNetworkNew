@@ -23,7 +23,8 @@ app.engine(
   hbs({
     extname: "hbs",
     defaultLayout: "default",
-    layoutsDir: __dirname + "/views/layouts/"
+    layoutsDir: __dirname + "/views/layouts/",
+    partialsDir: __dirname + "/views/partials/"
   })
 );
 app.set("views", path.join(__dirname, "views"));
@@ -42,6 +43,11 @@ app.use(
 );
 
 app.use(flash());
+app.use((req, res, next) => {
+  res.locals.success_msg = req.flash("success_msg");
+  res.locals.error_msg = req.flash("error_msg");
+  next();
+});
 
 // Routes
 app.use("/", require("./routes/showcase"));
