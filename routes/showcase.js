@@ -4,6 +4,7 @@ const { ensureAuthenticated } = require("../config/auth");
 
 const Profile = require("../models/Profiles");
 const Post = require("../models/Posts");
+const User = require("../models/Users");
 
 router.get("/", (req, res) => {
   res.render("showcase", {
@@ -18,15 +19,19 @@ router.get("/feed", ensureAuthenticated, (req, res) => {
 
 router.post("/feed", (req, res) => {
   const { text } = req.body;
+  const { name, email } = req.user;
 
   const userPost = new Post({
-    text
+    text,
+    name,
+    email
   });
 
   userPost
     .save()
     .then(user => {
-      req.flash("success_msg", "Account successfully created.");
+      req.flash("success_msg", "Created Post");
+      res.status(200);
     })
     .catch(err => {
       console.log(err);
