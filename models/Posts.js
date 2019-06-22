@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 const PostSchema = new mongoose.Schema({
   user: {
     type: Schema.Types.ObjectId,
-    ref: "users"
+    ref: "User"
   },
   text: {
     type: String,
@@ -16,7 +16,7 @@ const PostSchema = new mongoose.Schema({
     {
       user: {
         type: Schema.Types.ObjectId,
-        ref: "users"
+        ref: "User"
       }
     }
   ],
@@ -24,7 +24,7 @@ const PostSchema = new mongoose.Schema({
     {
       user: {
         type: Schema.Types.ObjectId,
-        ref: "users"
+        ref: "User"
       },
       text: {
         type: String,
