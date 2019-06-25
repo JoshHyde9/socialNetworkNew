@@ -13,8 +13,18 @@ router.get("/", (req, res) => {
   });
 });
 
-router.get("/feed", ensureAuthenticated, (req, res) => {
-  res.render("feed", { title: "Feed", name: req.user.name });
+router.get("/feed", ensureAuthenticated, async (req, res) => {
+  const posts = await Post.find().sort({ date: -1 });
+
+  posts.forEach(post => {
+    const userName = post.name;
+    const postText = post.text;
+  });
+
+  res.render("feed", {
+    title: "Feed",
+    name: req.user.name
+  });
 });
 
 router.post("/feed", (req, res) => {
