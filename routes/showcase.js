@@ -19,6 +19,8 @@ router.get("/feed", ensureAuthenticated, async (req, res) => {
   posts.forEach(post => {
     const userName = post.name;
     const postText = post.text;
+
+    console.log(post);
   });
 
   res.render("feed", {
