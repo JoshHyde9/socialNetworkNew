@@ -37,7 +37,6 @@ router.post("/feed", (req, res) => {
     .save()
     .then(user => {
       req.flash("success_msg", "Created Post");
-      res.status(200);
     })
     .catch(err => {
       console.log(err);
