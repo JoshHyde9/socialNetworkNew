@@ -16,16 +16,10 @@ router.get("/", (req, res) => {
 router.get("/feed", ensureAuthenticated, async (req, res) => {
   const posts = await Post.find().sort({ date: -1 });
 
-  posts.forEach(post => {
-    const userName = post.name;
-    const postText = post.text;
-
-    console.log(post);
-  });
-
   res.render("feed", {
     title: "Feed",
-    name: req.user.name
+    name: req.user.name,
+    post: posts
   });
 });
 

@@ -20,11 +20,14 @@
                     placeholder="What's on your mind, {{ name }}?"></textarea>
                 <button type="submit" class="btn-light">Post</button>
             </form>
-            {{!-- <div id="post">
+            <div id="posts">
                 {{#each post }}
-                {{this}}
+                <div class="item">
+                    <h1>{{this.name}}</h1>
+                    <p>{{this.text}}</p>
+                </div>
                 {{/each}}
-            </div> --}}
+            </div>
         </div>
         <div class="item">Lorem, ipsum.</div>
     </div>
