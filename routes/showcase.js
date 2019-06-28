@@ -23,7 +23,7 @@ router.get("/feed", ensureAuthenticated, async (req, res) => {
   });
 });
 
-router.post("/feed", (req, res) => {
+router.post("/feed", ensureAuthenticated, (req, res) => {
   const { text } = req.body;
   const { name, email } = req.user;
 
@@ -41,6 +41,7 @@ router.post("/feed", (req, res) => {
     .catch(err => {
       console.log(err);
     });
+  res.redirect("back");
 });
 
 router.get("/profile", ensureAuthenticated, (req, res) => {

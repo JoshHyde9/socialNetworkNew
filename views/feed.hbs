@@ -19,13 +19,14 @@
                 <textarea name="text" id="" cols="80" rows="5"
                     placeholder="What's on your mind, {{ name }}?"></textarea>
                 <button type="submit" class="btn-light">Post</button>
+                <br>
             </form>
             <div class="posts">
                 {{#each post }}
                 <div class="post">
-                    <h3>{{this.name}}</h3>
-                    <p>{{this.date}}</p>
-                    <p>{{this.text}}</p>
+                    <h5 class="user">{{this.name}} <p class="date">{{this.date}}</p>
+                    </h5>
+                    <p class="text">{{this.text}}</p>
                 </div>
                 {{/each}}
             </div>
