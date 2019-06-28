@@ -27,6 +27,14 @@ router.post("/feed", ensureAuthenticated, (req, res) => {
   const { text } = req.body;
   const { name, email } = req.user;
 
+  function isEmpty(str) {
+    return !str.replace(/\s+/, "").length;
+  }
+
+  if (isEmpty(text) || text == "") {
+    return res.redirect("back");
+  }
+
   const userPost = new Post({
     text,
     name,
