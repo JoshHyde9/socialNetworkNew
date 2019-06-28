@@ -28,6 +28,12 @@ a {
   max-width: 1300px;
 }
 
+.post {
+  padding: 5px;
+  margin: 10px;
+  background: #ddd;
+}
+
 .nav-menu ul {
   list-style-type: none;
   margin: 0;
