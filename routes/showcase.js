@@ -25,7 +25,8 @@ router.get("/feed", ensureAuthenticated, async (req, res) => {
 
 router.post("/feed", ensureAuthenticated, (req, res) => {
   const { text } = req.body;
-  const { name, email } = req.user;
+  const { name, _id } = req.user;
+  const postedBy = _id;
 
   function isEmpty(str) {
     return !str.replace(/\s+/, "").length;
@@ -36,9 +37,9 @@ router.post("/feed", ensureAuthenticated, (req, res) => {
   }
 
   const userPost = new Post({
+    postedBy,
     text,
-    name,
-    email
+    name
   });
 
   userPost
