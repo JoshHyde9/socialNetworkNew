@@ -11,7 +11,10 @@ router.get("/:id", ensureAuthenticated, async (req, res) => {
     return res.status(404).json({ msg: "Post not found!" });
   }
 
-  res.json(post);
+  res.render("post", {
+    title: `${post.name} on Twatter: "${post.text}"`,
+    post: post
+  });
 });
 
 module.exports = router;

@@ -20,7 +20,7 @@ router.get("/:id", async (req, res) => {
     return res.status(404).json({ msg: "User not found!" });
   }
 
-  res.render("profile", { user: user });
+  res.render("profile", { title: user.name, user: user });
 });
 
 router.post("/register", (req, res) => {
