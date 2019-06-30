@@ -51,6 +51,19 @@ a {
   font-size: 0.78em;
 }
 
+.scroll {
+  height: 300px;
+  overflow-y: scroll;
+  background: #fff;
+  max-width: 800px;
+}
+
+.comments {
+  margin: 3px 0px;
+  padding: 5px;
+  background: #fafafa;
+}
+
 .nav-menu ul {
   list-style-type: none;
   margin: 0;
