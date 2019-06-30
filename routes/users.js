@@ -13,6 +13,16 @@ router.get("/register", (req, res) => {
   res.render("register", { title: "Register an account" });
 });
 
+router.get("/:id", async (req, res) => {
+  const user = await User.findById(req.params.id);
+
+  if (!user) {
+    return res.status(404).json({ msg: "User not found!" });
+  }
+
+  res.render("profile", { user: user });
+});
+
 router.post("/register", (req, res) => {
   const { name, email, password, password2 } = req.body;
   let errors = [];

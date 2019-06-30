@@ -59,6 +59,7 @@ app.use((req, res, next) => {
 // Routes
 app.use("/", require("./routes/showcase"));
 app.use("/users", require("./routes/users"));
+app.use("/posts", require("./routes/posts"));
 
 // Page error handling
 app.use((req, res) => {

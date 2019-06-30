@@ -27,7 +27,9 @@
                     <h5 class="user"><a href="/users/{{this.postedBy}}">{{this.name}} </a>
                         <p class="date">{{this.date}}</p>
                     </h5>
-                    <p class="text">{{this.text}}</p>
+                    <a class="posttext" href="/posts/{{this._id}}">
+                        <p class="text">{{this.text}}</p>
+                    </a>
                 </div>
                 {{/each}}
             </div>

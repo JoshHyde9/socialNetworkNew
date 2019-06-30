@@ -45,6 +45,10 @@ a {
   font-weight: 100;
 }
 
+.post .posttext {
+  color: #000 !important;
+}
+
 .nav-menu ul {
   list-style-type: none;
   margin: 0;
