@@ -13,16 +13,6 @@ router.get("/register", (req, res) => {
   res.render("register", { title: "Register an account" });
 });
 
-router.get("/:id", async (req, res) => {
-  const user = await User.findById(req.params.id);
-
-  if (!user) {
-    return res.status(404).json({ msg: "User not found!" });
-  }
-
-  res.render("profile", { title: user.name, user: user });
-});
-
 router.post("/register", (req, res) => {
   const { name, email, password, password2 } = req.body;
   let errors = [];
@@ -105,8 +95,19 @@ router.post("/login", (req, res, next) => {
 });
 
 router.get("/logout", (req, res) => {
-  req.logOut();
+  req.logout();
   req.flash("success_msg", "Logged out successful");
   res.redirect("/users/login");
 });
+
+router.get("/:id", async (req, res) => {
+  const user = await User.findById(req.params.id);
+
+  if (!user) {
+    return res.status(404).json({ msg: "User not found!" });
+  }
+
+  res.render("profile", { title: user.name, user: user });
+});
+
 module.exports = router;
