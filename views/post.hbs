@@ -1,6 +1,5 @@
 <div class="post">
-    <h5 class="user">{{ post.name }}
-        <p class="date">{{ post.date }}</p>
-    </h5>
-    <p class="text">{{ post.text }}</p>
+    <h5 class="user"><a href="/users/{{post.postedBy}}">{{post.name}}</a></h5>
+    <p class="date">{{post.date}}</p>
+    <p class="text">{{post.text}}</p>
 </div>

@@ -37,16 +37,18 @@ a {
 .post .user {
   color: #33a2ff;
   font-weight: bold;
-}
-
-.post .user .date {
-  margin: 1px;
-  color: #000;
-  font-weight: 100;
+  -webkit-margin-after: 2px;
+          margin-block-end: 2px;
 }
 
 .post .posttext {
   color: #000 !important;
+}
+
+.post .posttext .date {
+  -webkit-margin-before: 0px;
+          margin-block-start: 0px;
+  font-size: 0.78em;
 }
 
 .nav-menu ul {
