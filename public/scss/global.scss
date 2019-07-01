@@ -47,6 +47,11 @@ a {
       font-size: 0.78em;
     }
   }
+
+  .posttdate {
+    margin-block-start: 0px;
+    font-size: 0.78em;
+  }
 }
 
 .scroll {
@@ -60,6 +65,17 @@ a {
   margin: 3px 0px;
   padding: 5px;
   background: #fafafa;
+
+  .user {
+    color: #33a2ff;
+    font-weight: bold;
+    margin-block-end: 2px;
+  }
+
+  .postdate {
+    margin-block-start: 0px;
+    font-size: 0.78em;
+  }
 }
 
 // Nav Menu

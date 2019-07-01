@@ -51,6 +51,12 @@ a {
   font-size: 0.78em;
 }
 
+.post .posttdate {
+  -webkit-margin-before: 0px;
+          margin-block-start: 0px;
+  font-size: 0.78em;
+}
+
 .scroll {
   height: 300px;
   overflow-y: scroll;
@@ -62,6 +68,19 @@ a {
   margin: 3px 0px;
   padding: 5px;
   background: #fafafa;
+}
+
+.comments .user {
+  color: #33a2ff;
+  font-weight: bold;
+  -webkit-margin-after: 2px;
+          margin-block-end: 2px;
+}
+
+.comments .postdate {
+  -webkit-margin-before: 0px;
+          margin-block-start: 0px;
+  font-size: 0.78em;
 }
 
 .nav-menu ul {
