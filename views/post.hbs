@@ -9,7 +9,7 @@
 
 <div class="post">
     <h5 class="user"><a href="/users/{{post.postedBy}}">{{post.name}}</a></h5>
-    <p class="date">{{post.date}}</p>
+    <p class="date">{{formatTime post.date "DD MMMM hh:mm A"}}</p>
     <p class="text">{{post.text}}</p>
 </div>
 
@@ -17,7 +17,7 @@
     {{#each comment}}
     <div class="comments">
         <h5 class="user"><a href="/users/{{this.postedBy}}">{{this.name}}</a></h5>
-        <p class="date">{{this.date}}</p>
+        <p class="date">{{formatTime this.date "DD MMMM hh:mm A"}}</p>
         <p class="text">{{this.text}}</p>
     </div>
     {{/each}}

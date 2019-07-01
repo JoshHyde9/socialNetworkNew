@@ -6,6 +6,8 @@ const path = require("path");
 const mongoose = require("mongoose");
 const passport = require("passport");
 
+const dayjs = require("dayjs");
+
 require("./config/passport")(passport);
 
 const app = express();
@@ -27,7 +29,14 @@ app.engine(
     extname: "hbs",
     defaultLayout: "default",
     layoutsDir: __dirname + "/views/layouts/",
-    partialsDir: __dirname + "/views/partials/"
+    partialsDir: __dirname + "/views/partials/",
+
+    helpers: {
+      formatTime: function(date, format) {
+        let dateFormat = dayjs(date);
+        return dateFormat.format(format);
+      }
+    }
   })
 );
 app.set("views", path.join(__dirname, "views"));
