@@ -9,7 +9,7 @@ const User = require("../models/Users");
 router.get("/", (req, res) => {
   res.render("showcase", {
     layout: "showcase",
-    title: "Welcome to the Social Network"
+    title: "Twatter. It's what's happening."
   });
 });
 
@@ -17,7 +17,7 @@ router.get("/feed", ensureAuthenticated, async (req, res) => {
   const posts = await Post.find().sort({ date: -1 });
 
   res.render("feed", {
-    title: "Feed",
+    title: "Feed / Twatter",
     name: req.user.name,
     post: posts
   });
